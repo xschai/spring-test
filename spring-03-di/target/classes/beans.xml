@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.chai.pojo.Address">
+        <property name="address" value="河南"/>
+    </bean>
+
+    <bean id="student" class="com.chai.pojo.Student">
+         <!--第一种普通注入-->
+        <property name="name" value="琴江"/>
+        <!-- 第二种，bean注入。-ref-->
+        <property name="address" ref="address"/>
+        <!--第三种，数组注入-->
+        <property name="books">
+            <array>
+                <value>三国</value>
+                <value>西游</value>
+                <value>水浒</value>
+            </array>
+        </property>
+        <!--List-->
+        <property name="hobbies">
+            <list>
+                <value>eat</value>
+                <value>drink</value>
+                <value>play</value>
+            </list>
+        </property>
+         <!--Map-->
+        <property name="card">
+            <map>
+                <entry key="1" value="12"/>
+                <entry key="2" value="23"/>
+            </map>
+        </property>
+        <property name="game">
+            <set>
+                <value>wangzhe</value>
+                <value>daota</value>
+                <value>lol</value>
+            </set>
+        </property>
+        <!--  null-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--properties-->
+        <property name="infor">
+            <props>
+                <prop key="id">20200405</prop>
+                <prop key="name">hdk</prop>
+            </props>
+        </property>
+    </bean>
+
+
+</beans>
